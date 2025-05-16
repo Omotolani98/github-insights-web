@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Ingress
+metadata:
+  name: insights-web
+  namespace: cloudcrafter
+  labels:
+    app: insights-web
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /

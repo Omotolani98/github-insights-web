@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: insights-web
+  namespace: cloudcrafter
+  labels:
+    app: insights-web
+spec:
+  selector:
+    matchLabels:
+      app: insights-web
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: insights-web
+    spec:
+      containers:
+        - name: insights-web
+          image: docker.io/tolani98/insights-web:latest
+          ports:
+            - containerPort: 80
+          
