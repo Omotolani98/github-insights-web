@@ -20,7 +20,6 @@ jobs:
             - name: Build Docker image
               run: |
                 docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/github-insights-web:latest .
-                docker tag ${{ secrets.DOCKERHUB_USERNAME }}/github-insights-web:latest
             - name: Push Docker image
               run: |
                 docker push ${{ secrets.DOCKERHUB_USERNAME }}/github-insights-web:latest

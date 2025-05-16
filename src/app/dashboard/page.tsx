@@ -14,7 +14,7 @@ export default function Home() {
     async function handleCallback() {
       // use token to fetch user data
       const userResponse = await axios.get(
-        `http://localhost:52000/v1/user`,
+        `http://insights-service/v1/user`,
         {
           headers: {
             "Content-Type": "application/json",
