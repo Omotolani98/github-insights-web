@@ -21,7 +21,7 @@ function CallbackContent() {
 
             try {
                 const response = await axios.get(
-                    `http://localhost:52000/v1/github/callback?code=${code}`,
+                    `http://insights-service/v1/github/callback?code=${code}`,
                     {
                         headers: {
                             "Content-Type": "application/json",
